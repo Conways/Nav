@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_match"
+    app:startDestination="@id/matchFragment">
+
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="com.conways.nav.fragment.MatchFragment"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match" >
+        <action
+            android:id="@+id/action_matchFragment_to_inGameFragment"
+            app:destination="@id/inGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inGameFragment"
+        android:name="com.conways.nav.fragment.InGameFragment"
+        android:label="fragment_in_game"
+        tools:layout="@layout/fragment_in_game" >
+        <action
+            android:id="@+id/action_inGameFragment_to_winnerFragment"
+            app:destination="@id/winnerFragment" />
+        <action
+            android:id="@+id/action_inGameFragment_to_failedFragment"
+            app:destination="@id/failedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winnerFragment"
+        android:name="com.conways.nav.fragment.WinnerFragment"
+        android:label="fragment_winner"
+        tools:layout="@layout/fragment_winner" >
+        <action
+            android:id="@+id/action_winnerFragment_to_matchFragment"
+            app:popUpTo="@id/nav_match" />
+    </fragment>
+    <fragment
+        android:id="@+id/failedFragment"
+        android:name="com.conways.nav.fragment.FailedFragment"
+        android:label="fragment_failed"
+        tools:layout="@layout/fragment_failed" >
+        <action
+            android:id="@+id/action_failedFragment_to_matchFragment"
+
+            app:popUpTo="@id/nav_match" />
+
+
+
+    </fragment>
+
+</navigation>
