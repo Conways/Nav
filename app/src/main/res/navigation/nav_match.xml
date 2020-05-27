@@ -21,32 +21,26 @@
         tools:layout="@layout/fragment_in_game" >
         <action
             android:id="@+id/action_inGameFragment_to_winnerFragment"
-            app:destination="@id/winnerFragment" />
+            app:destination="@id/winnerFragment"
+            app:popUpTo="@id/inGameFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_inGameFragment_to_failedFragment"
-            app:destination="@id/failedFragment" />
+            app:destination="@id/failedFragment"
+            app:popUpTo="@id/inGameFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/winnerFragment"
         android:name="com.conways.nav.fragment.WinnerFragment"
         android:label="fragment_winner"
         tools:layout="@layout/fragment_winner" >
-        <action
-            android:id="@+id/action_winnerFragment_to_matchFragment"
-            app:popUpTo="@id/nav_match" />
     </fragment>
     <fragment
         android:id="@+id/failedFragment"
         android:name="com.conways.nav.fragment.FailedFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_failed" >
-        <action
-            android:id="@+id/action_failedFragment_to_matchFragment"
-
-            app:popUpTo="@id/nav_match" />
-
-
-
     </fragment>
 
 </navigation>

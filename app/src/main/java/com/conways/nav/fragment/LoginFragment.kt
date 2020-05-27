@@ -32,11 +32,11 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.fragment_login, container, false);
-        view.findViewById<TextView>(R.id.fragment_login_bt).setOnClickListener {
-
-            view.findNavController().navigate(R.id.action_loginFragment_to_nav_match)
-
-        }
+//        view.findViewById<TextView>(R.id.fragment_login_bt).setOnClickListener {
+//
+//            view.findNavController().navigate(R.id.action_loginFragment_to_nav_match)
+//
+//        }
         return view
     }
 }

@@ -32,7 +32,6 @@ class SplashFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_splash, container, false)
-        binding.vm=model
         binding.fragmentSplashBt.setOnClickListener { it.findNavController().navigate(R.id.action_spalshFragment_to_loginFragment) }
         return binding.root
     }
