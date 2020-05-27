@@ -3,8 +3,10 @@ package com.conways.nav.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.conways.nav.R
 import com.conways.nav.databinding.FragmentSplashBinding
 import com.conways.nav.viewmodel.SplashViewModel
 import com.conways.statusbar.StatusBar
@@ -22,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     //初始化mvvm
-    fun init() {
+    private fun init() {
         binding = FragmentSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         model = ViewModelProvider(this)[SplashViewModel::class.java]
@@ -45,7 +47,7 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    fun toTargetByLoginStatus() {
+    private fun toTargetByLoginStatus() {
         startActivity(
             Intent(
                 this,
@@ -58,11 +60,11 @@ class SplashActivity : AppCompatActivity() {
 
 
     //设置状态栏
-    fun setStatuBar() {
+    private fun setStatuBar() {
         StatusBar(this).apply {
             isDarkModel = true
             type = StatusBarType.Normal
-            color = 0xfffbbc05.toInt()
+            color = ActivityCompat.getColor(this@SplashActivity, R.color.colorYellow)
         }.commit()
     }
 }
