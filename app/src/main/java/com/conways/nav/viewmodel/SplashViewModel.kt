@@ -21,20 +21,24 @@ class SplashViewModel : ViewModel(),LifecycleObserver{
 
     var timeLeft = MutableLiveData<Int>(TIME)
 
+    var test="test"
+
 
     fun hasLogin(): Boolean {
         return SpRepository.getInstance().hasLogin()
     }
 
+    fun getTimeLeft(): String? {
+        return timeLeft.value?.toString()
+    }
+
 
     fun startCountDownTime() {
-        Log.d("zzzzzzz", "startCountDownTime")
         timeDown?.start()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun cancelCountDownTime() {
-        Log.d("zzzzzzz", "cancelCountDownTime")
         timeDown?.cancel()
     }
 
